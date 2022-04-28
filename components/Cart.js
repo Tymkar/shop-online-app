@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import {
   AiOutlineMinus,
@@ -9,6 +8,7 @@ import {
 } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import toast from "react-hot-toast";
+
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 import getStripe from "../lib/getStripe";
@@ -97,7 +97,9 @@ const Cart = () => {
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="num">{item.quantity}</span>
+                        <span className="num" onClick="">
+                          {item.quantity}
+                        </span>
                         <span
                           className="plus"
                           onClick={() =>
@@ -120,11 +122,10 @@ const Cart = () => {
               </div>
             ))}
         </div>
-
         {cartItems.length >= 1 && (
           <div className="cart-bottom">
             <div className="total">
-              <h3>Total:</h3>
+              <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
