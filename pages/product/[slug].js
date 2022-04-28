@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Product } from "../../components";
 import { urlFor, client } from "../../lib/client";
+import { useStateContext } from "../../context/StateContext";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
