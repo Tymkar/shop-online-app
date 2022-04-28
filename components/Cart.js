@@ -13,6 +13,10 @@ import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 
 const Cart = () => {
+  const carfRef = useRef();
+  const { totalPrice, totalQuantities, cartItems, setShowCart } =
+    useStateContext();
+
   return <div>Cart</div>;
 };
 
